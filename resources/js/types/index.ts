@@ -38,3 +38,15 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+export interface Job {
+    id: number;
+    company: string;
+    logo: string;
+    title: string;
+    location: string;
+    type: string;
+    salary: string;
+    description: string;
+    created_at: string;
+}

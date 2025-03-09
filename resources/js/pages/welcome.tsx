@@ -1,4 +1,5 @@
 import HeroSection from '@/components/hero-section';
+import JobResult from '@/components/job-result';
 import MainNav from '@/components/main-nav';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
@@ -49,6 +50,7 @@ export default function Welcome() {
                 </header>
 
                 <HeroSection />
+                <JobResult />
             </div>
         </>
     );
