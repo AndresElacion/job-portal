@@ -11,8 +11,12 @@ class JobPostingController extends Controller
     public function index() {
         $findJob = Job_Posting::orderBy('created_at', 'DESC')->get();
         return Inertia::render('Jobs/find-job',
-    [
-        'findJob' => $findJob
-    ]);
+        [
+            'findJob' => $findJob
+        ]);
+    }
+
+    public function create() {
+        return Inertia::render('Jobs/create-job');
     }
 }
