@@ -13,6 +13,11 @@ const mainNavItems: NavItem[] = [
         url: '/dashboard',
         icon: LayoutGrid,
     },
+    {
+        title: 'Create Job',
+        url: '/create-job',
+        icon: LayoutGrid,
+    },
 ];
 
 const footerNavItems: NavItem[] = [
