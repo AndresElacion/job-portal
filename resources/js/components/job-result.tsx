@@ -1,70 +1,16 @@
 import { Job } from "@/types";
 import { useState } from "react";
+interface JobResultProps {
+    data: Job[];
+}
 
-export default function JobResult() {
+export default function JobResult({ data }: JobResultProps) {
     const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
-    /* This is for dummy */
-    function getCompanyLogo(companyName: string): string {
-        const baseUrl = "https://ui-avatars.com/api";
-        const params = new URLSearchParams({
-            name: companyName,
-            background: "random",
-            size: "128",
-            format: "svg",
-            bold: "true"
-        });
-        
-        return `${baseUrl}/?${params.toString()}`;
+    console.log(data);
+    if (!data || data.length === 0) {
+        return <div>No jobs available</div>;
     }
-
-    // Dummy data - replace with actual API data
-    const jobs: Job[] = [
-        {
-            id: 1,
-            company: "Google Inc",
-            logo: getCompanyLogo("Google Inc"),
-            title: "Senior Developer",
-            location: "Mountain View, CA",
-            type: "Full-time",
-            salary: "$150k - $200k",
-            created_at: "2d ago",
-            description: "Join our team to build next-generation web applications..."
-        },
-        {
-            id: 2,
-            company: "Microsoft",
-            logo: getCompanyLogo("Microsoft"),
-            title: "Mid Developer",
-            location: "Redmond, WA",
-            type: "Full-time",
-            salary: "$130k - $160k",
-            created_at: "1d ago",
-            description: "Looking for an experienced developer to join our cloud team..."
-        },
-        {
-            id: 3,
-            company: "Apple",
-            logo: getCompanyLogo("Apple"),
-            title: "iOS Developer",
-            location: "Cupertino, CA",
-            type: "Full-time",
-            salary: "$140k - $180k",
-            created_at: "3d ago",
-            description: "Create innovative mobile applications for Apple platforms..."
-        },
-        {
-            id: 4,
-            company: "Meta",
-            logo: getCompanyLogo("Meta"),
-            title: "React Developer",
-            location: "Menlo Park, CA",
-            type: "Full-time",
-            salary: "$145k - $190k",
-            created_at: "4d ago",
-            description: "Join our team building the future of social connectivity..."
-        },
-    ];
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -72,7 +18,7 @@ export default function JobResult() {
                 {/* Left side - Job Cards */}
                 <div className="flex-1">
                     <div className="grid gap-4">
-                        {jobs.map((job) => (
+                        {data.map((job) => (
                             <button
                                 key={job.id}
                                 onClick={() => setSelectedJob(job)}

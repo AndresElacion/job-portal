@@ -47,7 +47,7 @@ export default function CreateJob() {
             }
         });
 
-        post(route('post-job'), {
+        post(route('home'), {
             onFinish: () => reset('company', 'logo', 'title', 'location', 'type', 'salary', 'description'),
         })
     };
