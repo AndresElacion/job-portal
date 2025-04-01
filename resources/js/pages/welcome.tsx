@@ -1,11 +1,12 @@
 import HeroSection from '@/components/hero-section';
 import JobResult from '@/components/job-result';
 import MainNav from '@/components/main-nav';
-import { type SharedData } from '@/types';
+import { Job, type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
 
-export default function Welcome() {
+export default function Welcome({data}: {data: Job[]}) {
     const { auth } = usePage<SharedData>().props;
+    console.log('Data from Inertia welcome:', data);
 
     return (
         <>
@@ -50,7 +51,7 @@ export default function Welcome() {
                 </header>
 
                 <HeroSection />
-                <JobResult />
+                <JobResult data={data} />
             </div>
         </>
     );
