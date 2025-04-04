@@ -6,7 +6,6 @@ import { Head, Link, usePage } from '@inertiajs/react';
 
 export default function Welcome({data}: {data: Job[]}) {
     const { auth } = usePage<SharedData>().props;
-    console.log('Data from Inertia welcome:', data);
 
     return (
         <>
