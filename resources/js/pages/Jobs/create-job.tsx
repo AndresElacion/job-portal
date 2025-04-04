@@ -17,7 +17,7 @@ interface JobFormData extends Omit<Job, 'logo'> {
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Create Job',
-        href: '/create-job',
+        href: '/create/job',
     },
 ];
 
