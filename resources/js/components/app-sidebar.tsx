@@ -15,7 +15,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Create Job',
-        url: '/create-job',
+        url: '/create/job',
         icon: LayoutGrid,
     },
 ];
